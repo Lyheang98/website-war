@@ -1,103 +1,156 @@
+'use client';
 import Image from "next/image";
+import React from "react";
+import { Kantumruy_Pro, Montserrat } from 'next/font/google';
+import { motion } from "framer-motion";
 
-export default function Home() {
+const kantumruy = Kantumruy_Pro({
+  subsets: ['khmer'],
+  weight: ['400', '700'],
+  display: 'swap',
+  variable: '--font-kantumruy',
+})
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+  variable: '--font-montserrat',
+})
+
+export default function HeroSection() {
+  const cards = [
+    {
+      src: "IMG_5864.JPG",
+      category: "Reliable Schemas",
+      title: "What Zombies Can Teach You About Food",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla delectus corporis commodi aperiam, amet cupiditate?",
+    },
+    {
+      src: "IMG_5864.JPG",
+      category: "Client-based Adoption",
+      title: "Old School Art",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla delectus.",
+    },
+    {
+      src: "IMG_5864.JPG",
+      category: "Intellectual Capital",
+      title: "5 Things To Do About Rain",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, neque. Eius, ea possimus.",
+    },
+  ];
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div>
+      {/* 🌄 Section 1: Hero with Background Image & Overlay Text */}
+      <div className="relative  md:px-12   w-full h-[700px] overflow-hidden">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          src="/IMG_5863.PNG"
+          alt="Hero Background"
+          fill
           priority
+          unoptimized
+          className="object-cover w-full h-full"
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        {/* ✅ Animated Overlay Text */}
+        <div className="absolute p-40 inset-0 bg-black/50 flex items-center justify-start">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-left px-6 md:px-12 max-w-4xl"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
+            <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+              សូមស្វាគមន៍មកកាន់ក្រសួងវេទមន្ត
+              <br className="hidden md:block" />
+              Don't thai to me
+            </h1>
+            <p className="mt-6 text-lg text-gray-200">
+              Thailand is a thiefland in many years start 2008, don't thai to me.
+            </p>
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block mt-8 px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-lg text-lg transition-all"
+            >
+              more detail
+            </motion.a>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* 📰 Section 2: Latest News Cards */}
+      <section className="flex flex-col justify-center max-w-6xl min-h-screen px-4 py-10 mx-auto sm:px-6 font-family font-medium">
+        <div className="flex flex-wrap items-center justify-between mb-8">
+          <h2 className="mr-10 text-1xl font-kantumruy font-bold text-amber-800 leading-none md:text-3xl">
+            សូមស្តាប់
+          </h2>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#"
+            className="block pb-1 mt-2 text-base font-black font-Montserrat text-blue-600 uppercase border-b border-transparent hover:border-blue-600"
           >
-            Read our docs
+            យល់ដឹងពីចោរ
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <div className="flex flex-wrap -mx-4">
+          {cards.map((card, index) => (
+            <motion.div
+              key={index}
+              className="w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-full h-70 relative">
+                <Image
+                  src={card.src}
+                  alt="Card img"
+                  fill
+                  className="object-cover object-center"
+                  unoptimized
+                />
+              </div>
+
+              <div className="flex flex-grow">
+                <div className="triangle"></div>
+
+                <div className="flex flex-col justify-between px-4 py-6 bg-white border border-gray-400">
+                  <div>
+                    <a
+                      href="#"
+                      className="inline-block mb-4 text-xs font-bold capitalize border-b-2 border-blue-600 hover:text-blue-600"
+                    >
+                      {card.category}
+                    </a>
+                    <a
+                      href="#"
+                      className="block mb-4 text-2xl font-black leading-tight hover:underline hover:text-blue-600"
+                    >
+                      {card.title}
+                    </a>
+                    <p className="mb-4">{card.description}</p>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      className="inline-block pb-1 mt-2 text-base font-black text-blue-600 uppercase border-b border-transparent hover:border-blue-600"
+                    >
+                      Read More
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
