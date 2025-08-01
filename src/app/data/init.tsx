@@ -1,6 +1,3 @@
-import { source } from 'framer-motion/client';
-import React from 'react'
-
 export default function init() {
     const cards = [
         {

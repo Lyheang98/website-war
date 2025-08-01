@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Kantumruy_Pro, Montserrat } from "next/font/google";
+import { Kantumruy_Pro, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/component/navbar/navbarcomponent";
 import FooterComponent from "@/component/footer/FooterComponent";

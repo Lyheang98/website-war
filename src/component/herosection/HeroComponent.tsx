@@ -18,10 +18,10 @@ export default function HeroComponent() {
             className="text-left px-2 md:px-12 max-w-4xl"
           >
             <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-              សូមស្វាគមន៍មកកាន់ក្រសួងវេទមន្ត <br /> Don't thai to me
+              សូមស្វាគមន៍មកកាន់ក្រសួងវេទមន្ត <br /> Don&apos;t thai to me
             </h1>
             <p className="mt-6 text-lg text-gray-200">
-              Thailand is a thiefland in many years start 2008, don't thai to me.
+              Thailand is a thiefland in many years start 2008, don&apos;t thai to me.
             </p>
           </div>
         </div>

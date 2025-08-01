@@ -38,7 +38,7 @@ export default function QuoteComponent() {
                     {testimonial.name}
                   </h4>
                   <p className="text-sm text-gray-500">{testimonial.role}</p>
-                  <p className="text-black text-lg font-bold pt-5">"{testimonial.feedback}"</p>
+                  <p className="text-black text-lg font-bold pt-5">&quot;{testimonial.feedback}&quot;</p>
                 </div>
               </div>
               

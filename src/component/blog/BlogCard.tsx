@@ -1,21 +1,6 @@
 import init from "@/app/data/init";
-import { Kantumruy_Pro, Montserrat } from "next/font/google";
 import Image from "next/image";
 import React from "react";
-
-const kantumruy = Kantumruy_Pro({
-  subsets: ["khmer"],
-  weight: ["400", "700"],
-  display: "swap",
-  variable: "--font-kantumruy",
-});
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  display: "swap",
-  variable: "--font-montserrat",
-});
 
 export default function BlogCard() {
   const cards = init();
