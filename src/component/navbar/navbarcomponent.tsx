@@ -7,7 +7,7 @@ export default function Navbar() {
     <div className="top-0 lg:py-2 w-full bg-white lg:full z-100 sticky">
       <nav className="w-full px-5 py-2.5 lg:py-4">
         <div className="flex items-center justify-between w-full max-w-[1100px]  mx-auto">
-          <a href="/">
+          <Link href="/">
               <Image
                 src="/images/mms.png"
                 alt="Logo"
@@ -15,7 +15,7 @@ export default function Navbar() {
                 height={80}
                 className="object-contain"
               />
-          </a>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden lg:block">
